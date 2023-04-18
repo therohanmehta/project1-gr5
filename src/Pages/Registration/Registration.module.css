@@ -1,0 +1,8 @@
+.div{
+    /* bor der: 2px solid; */
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 50vh;
+    margin-left: 20vw;
+}
