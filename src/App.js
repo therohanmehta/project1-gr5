@@ -8,6 +8,9 @@ import Pricing from './Pages/Pricing/Pricing';
 import Login from './Pages/Login/Login'
 import TrainerSection from "./Pages/TrainerSection/TrainerSection";
 import Registration from "./Pages/Registration/Registration";
+import Home from './Pages/Home/Home';
+
+
 function App() {
   return (
 
@@ -20,7 +23,7 @@ function App() {
       <Route path='/pricing' element={<Pricing/>}/>
       <Route path='/trainer' element={<TrainerSection/>}/>
       <Route path='/registration' element={<Registration/>}/>
-        
+      <Route path='/home' element={<Home/>}/>
 
      </Routes>
     
