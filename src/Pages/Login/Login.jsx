@@ -24,9 +24,9 @@ function Login() {
       alert('login sucessful')
      }
     
-    //  else{
-    //   alert('Kindly check your email and password ')
-    //  }
+      else{
+      alert('Kindly check your email and password ')
+      }
 }
 
 
