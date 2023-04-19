@@ -9,14 +9,16 @@ import Login from './Pages/Login/Login'
 import TrainerSection from "./Pages/TrainerSection/TrainerSection";
 import Registration from "./Pages/Registration/Registration";
 import Home from './Pages/Home/Home';
+import Footer from './Pages/Footer/Footer';
 
 
 function App() {
   return (
 
     <BrowserRouter>
-     <Routes>
     {/* <Header/> */}
+     <Routes>
+   
      <Route path='/' element={<Login/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/training' element={<Training/>}/>
@@ -26,7 +28,7 @@ function App() {
       <Route path='/home' element={<Home/>}/>
 
      </Routes>
-    
+    {/* <Footer/> */}
     </BrowserRouter>
     
   );

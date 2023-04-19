@@ -5,21 +5,19 @@ import RegCss from './Registration.module.css'
 import {userData} from "../../locaStorage/localStorage";
 
 function Registration() {
-const[local,setLocal]=useRecoilState([])
+const[local,setLocal]=useRecoilState(userData)
 const[fname,setFname]=useState('')
 const[lname,setLname]=useState('')
 const[email,setEmail]=useState('')
 const[password,setPassword]=useState('')
 
 
-    function submitToLocal(){
-        const newData=[...local,{fname,lname,email,password}]
-        setLocal(newData)
-        
-    }
-    useEffect(()=>{
-        // localStorage.getItem()
-    },[])
+
+function submitToLocal(){
+  const newData=[...local,{fname,lname,email,password}]
+  setLocal(newData)
+  localStorage.setItem('users',JSON.stringify(newData))
+}
 
   return (
     <div className={RegCss.div}>

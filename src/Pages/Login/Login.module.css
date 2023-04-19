@@ -1,6 +1,7 @@
 .Div{
     border: 2px solid red;
-    display: flex;
+    display: flex;   
+    /* display: block; */
     flex-direction: column;
 
 }
