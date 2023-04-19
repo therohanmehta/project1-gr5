@@ -1,13 +1,13 @@
 .div{
-    /* bor der: 2px solid; */
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
-    margin-top: 20%;
+    margin-top: 1%;
     margin-left: 22vw;
     /* border: 2px solid red; */
     height: 320px;
     width: 250px;
+   
     
 }
 

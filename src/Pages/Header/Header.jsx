@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import header from "./Header.module.css";
+// import LogoutIcon from '@mui/icons-material/Logout';
 function Header() {
 
   return (
@@ -11,6 +12,7 @@ function Header() {
     <h6><Link to={'/training'}>training programe</Link></h6>
     <h6><Link to={'/trainer'}> traine</Link></h6>
     <h6><Link to={'/pricing'}>pricing</Link></h6>
+    <h6 style={{cursor:'not-allowed'}}><Link to={'/'}>👋Logout</Link></h6>
 
     </div>
   )

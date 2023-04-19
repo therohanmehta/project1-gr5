@@ -24,9 +24,9 @@ function Login() {
       alert('login sucessful')
      }
     
-     else{
-      alert('Kindly check your email and password ')
-     }
+    //  else{
+    //   alert('Kindly check your email and password ')
+    //  }
 }
 
 
@@ -40,7 +40,7 @@ function Login() {
 {/* <input type="text "  placeholder='Password'  onChange={(e)=>{setEnteredPass(e.target.value)}}/> */}
 {homeVis?'':<Button variant='outlined' sx={{ width: '28ch' }} onClick={CheckDataFromLocal}>Click to validate</Button>}
 {/* {homeVis?<Link to={'/home'}><button onClick={()=>{setHomeVis(false)}}>Go to Home</button></Link>:""} */}
-<Button onClick={()=>{alert('Enter Details to Register in our Gym')}} variant='outlined' sx={{ width: '28ch' }}><Link to={'/registration'}>Dont have an account SIgnup</Link></Button>
+<Button onClick={()=>{alert('Enter Details to Become a part of our gym family')}} variant='outlined' sx={{ width: '28ch' }}><Link to={'/registration'}>Dont have an account SIgnup</Link></Button>
   
 
 </div>

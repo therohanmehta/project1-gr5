@@ -12,62 +12,84 @@ function Registration() {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fNameError,setFnameError]=useState(true)
+  const [lNameError,setLnameError]=useState(true)
+  const [emailError,setEmailError]=useState(true)
+  const [passwordError,setPasswordError]=useState(true)
   const [submitButton,setSubmitButton]=useState(false)
   function submitToLocal() {
+
     if (fname == "" && lname == "" && email == "" && password == "") {
       const newData = [...local];
       setLocal(newData);
       localStorage.setItem("users", JSON.stringify(newData));
-      alert("No data entered Redirected to Login Page");
-    } else {
+      alert("Check all the input field");
+    } 
+    
+    
+    else if(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && /^[a-zA-Z]+$/.test(fname) && /^[a-zA-Z]+$/.test(lname) &&  /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(password) ) {
       const newData = [...local, { fname, lname, email, password }];
       setLocal(newData);
       localStorage.setItem("users", JSON.stringify(newData));
       setSubmitButton(!submitButton)
       alert('Registration successful Click on Go to Login Button')
     }
+    else{
+      alert('Please check all the fields  ')
+    }
   }
   function handleSubmitButton(){
    
-    setSubmitButton(false)
     alert('Enter the details same details in the login fields')
+    setSubmitButton(false)
   }
-function handleName(e){
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(regex.test(e.target.value)){
-      alert('vagasdg')
-  }
-}
+
+
+
   return (
-    <form action="submit" className={RegCss.div}>
+    <div className={RegCss.div}>
+      
       <TextField
         type="text"
         sx={{ width: "25ch" }}
         id="outlined-basic"
         label="First Name"
         variant="outlined"
-        // onChange={(e) => {
-        //   setFname(e.target.value);
-        // }}
-        onChange={handleName}
+        helperText={
+          fNameError ? "Only contains Alphabets " : "Valid Name"
+        }
+        onChange={(e) => {
+          setFname(e.target.value);
+          {/^[a-zA-Z]+$/.test(fname)?setFnameError(false):setFnameError(true)}
+        }}
       />
+       
       <TextField
         sx={{ width: "25ch" }}
         id="outlined-basic"
         label="Last Name"
         variant="outlined"
+        helperText={
+          lNameError ? "Name dont contain any spaces " : "Valid Name"
+        }
         onChange={(e) => {
           setLname(e.target.value);
+          {/^[a-zA-Z]+$/.test(lname)?setLnameError(false):setLnameError(true)}
         }}
       />
+      
       <TextField
         sx={{ width: "25ch" }}
         id="outlined-basic"
         type="email"
         label="E-mail"
         variant="outlined"
+        helperText={
+          emailError ? "Invalid email" : "Valid Email"
+        }
         onChange={(e) => {
           setEmail(e.target.value);
+          {/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)?setEmailError(false):setEmailError(true)}
         }}
       />
       <TextField
@@ -76,12 +98,17 @@ function handleName(e){
         type="password"
         label="Password"
         variant="outlined"
+        helperText={
+          passwordError ? "password contain 8 characters with one number" : "Strong Password"
+        }
         onChange={(e) => {
           setPassword(e.target.value);
+          {/^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/.test(password)?setPasswordError(false):setPasswordError(true)}
         }}
       />
       {submitButton?<Button sx={{ width: "28ch" }} variant="outlined" onClick={handleSubmitButton} ><Link to={'/'}>Go to Login Page</Link></Button>:<Button sx={{ width: "28ch" }} variant="outlined" onClick={submitToLocal}>CLick</Button>}
-    </form>
+
+    </div>
   );
 }
 {
