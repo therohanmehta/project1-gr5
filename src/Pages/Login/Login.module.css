@@ -1,7 +1,17 @@
 .Div{
-    border: 2px solid red;
-    display: flex;   
+    /* border: 2px solid red; */
+    /* display: flex;    */
     /* display: block; */
     flex-direction: column;
 
+    width: 300px;
+    height: auto;
+    margin-top: 14%;
+    margin-left: 32%;
+    margin-right: 20vw;
+    position: fixed;
+
+}
+.Div *{
+    margin-bottom: 10px;
 }

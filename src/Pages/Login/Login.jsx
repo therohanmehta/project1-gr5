@@ -1,38 +1,48 @@
 import React,{useEffect, useState} from 'react'
-import { useRecoilValue } from "recoil";
+import { useRecoilValue,useRecoilState } from "recoil";
 import LoginCss from "./Login.module.css";
 import { Link } from "react-router-dom";
-import {userData} from "../../locaStorage/localStorage";
+import {showHome, userData} from "../../locaStorage/localStorage";
 import Home from '../Home/Home';
-
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 function Login() {
+  
   const atomvalue=useRecoilValue(userData)
   const [enteredEmail,setEnteredEmail]=useState()  
   const [enteredPass,setEnteredPass]=useState('')
-  const [filterData,setfilterData]=useState('')
-  const [showHome,setShowHome]=useState(true)
+ const [homeVis,setHomeVis]=useRecoilState(showHome)
+ const [test,setTest]=useState('')
 
 
 
   function CheckDataFromLocal() {
-     const dataEnteredIsValid=atomvalue.filter((x)=> x.email===enteredEmail&& x.password===enteredPass)
+     const dataEnteredIsValid=atomvalue.find((x)=> x.email===enteredEmail&& x.password===enteredPass)
      if(dataEnteredIsValid){
-      setShowHome(!showHome)
+      setHomeVis(!homeVis)
+      setTest(dataEnteredIsValid)
+      alert('login sucessful')
+     }
+    
+     else{
+      alert('Kindly check your email and password ')
      }
 }
 
 
   return (
 
-   
+    homeVis?<Home/> :  
 <div className={LoginCss.Div}>
-      
-<input type="text "  placeholder='Email' onChange={(e)=>{setEnteredEmail(e.target.value)}}/>
-<input type="text "  placeholder='Password'  onChange={(e)=>{setEnteredPass(e.target.value)}}/>
-{showHome?<button onClick={CheckDataFromLocal}> Login</button>:<Link to={'/home'}><button>Go to Home</button></Link>}
-<Link to={'/registration'}><button>Dont have an account SIgnup</button></Link>
+<TextField sx={{ width: '25ch' }} id="outlined-basic" label="Enter your Email" variant="outlined" onChange={(e)=>{setEnteredEmail(e.target.value)}}/>
+<TextField type='password' sx={{ width: '25ch' }} id="outlined-basic" label="Enter your password   " variant="outlined" onChange={(e)=>{setEnteredPass(e.target.value)}}/>
+{/* <input type="email "  placeholder='Email' onChange={(e)=>{setEnteredEmail(e.target.value)}}/> */}
+{/* <input type="text "  placeholder='Password'  onChange={(e)=>{setEnteredPass(e.target.value)}}/> */}
+{homeVis?'':<Button variant='outlined' sx={{ width: '28ch' }} onClick={CheckDataFromLocal}>Click to validate</Button>}
+{/* {homeVis?<Link to={'/home'}><button onClick={()=>{setHomeVis(false)}}>Go to Home</button></Link>:""} */}
+<Button onClick={()=>{alert('Enter Details to Register in our Gym')}} variant='outlined' sx={{ width: '28ch' }}><Link to={'/registration'}>Dont have an account SIgnup</Link></Button>
   
-<button onClick={CheckDataFromLocal}>CVlick to conmsole</button>
+
 </div>
     
   )

@@ -25,5 +25,12 @@
     align-items: center;
 }
 .txt{
-    color: black;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+}
+.heading{
+    /* color: red; */
+}
+@media screen and (max-width:1000px){
+    
 }
