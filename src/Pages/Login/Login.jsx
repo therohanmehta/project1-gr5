@@ -8,8 +8,6 @@ function Login() {
       <input type="text "  placeholder='PAssword'/>
       <Link to={'/aboutus'}><button> Login</button></Link>
       <Link to={'/registration'}><button>Dont have an account SIgnup</button></Link>
-        
-        
     </div>
   )
 }
