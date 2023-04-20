@@ -1,0 +1,87 @@
+.headingDiv {
+  
+    align-items: center;
+    display: inline;
+    background-color: aquamarine;
+    color: rgb(0, 0, 0);
+  }
+  .wrapper {
+    background-color: rgb(98, 55, 55);
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .div1 {
+    color: wheat;
+    background-color: black;
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+    margin-inline-end: 4px;
+  }
+  .div2 {
+    width: 20rem;
+    height: 17rem;
+    border-radius: 10px;
+  }
+  .div3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .submit {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: larger;
+  }
+  .btn {
+    font-size: larger;
+    background-color: black;
+    color: rgb(246, 248, 251);
+    border-radius: 10px;
+    font-family: 'Lobster Two', cursive;
+  }
+  .heading1{
+    font-family: 'Lobster Two', cursive;
+    margin-top: 3rem;
+    font-size: 5rem;
+    text-decoration:underline;
+    color: black;
+  }
+  .btnTeam{
+    background-color: rgb(0, 0, 0);
+    margin-top: 5rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Lobster Two', cursive;
+    border-radius: 15px;
+    width: 10%;
+  
+  }
+  @media only screen and (min-width : 735px) and (max-width:1400px) {
+    .div3{
+        font-size:16px;
+        padding-top:14px;
+    }
+    @media only screen and (min-width : 321px) and (max-width:734px) {
+        .div3{
+            font-size:13px;
+            padding-top:1px;
+        }
+    }
+    @media only screen and (min-width : 200px) and (max-width:320px) {
+        .div3 {
+            font-size:12px;
+            padding-top:1px;
+        }
+    }
+}
