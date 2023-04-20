@@ -1,36 +1,38 @@
- .mainDiv{
-    height: 100vh;
+.mainDiv{
     width: 100vw;
-    background-image: url(https://media.istockphoto.com/id/928250848/photo/gym-background-blurred.jpg?s=170667a&w=0&k=20&c=HT02lVIQy0peuzlhBt80MgvPphasPaGVyjHLpBnXd_s=);
- 
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
- }
-.vdo1div{
-    display: flex;
-    /* border: 2px solid rgb(4, 69, 250); */
-    width:100vw; 
-    float: left;
-    justify-content: space-around;
-    gap: 50px;
-    
-}
-
-.vdo2div{
-    display: flex;
-    /* border: 2px solid rgb(0, 0, 0); */
-    width:100vw;
-    float: right;
-    justify-content: space-around;
-    align-items: center;
+    position: relative;
+    background-size: 100vw 1000px;
+    background: linear-gradient(-70deg, #a53e3a57 10%,rgba(19, 18, 18, 0.033) 90%),
+     url('https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
 }
 .txt{
-    color: rgb(0, 0, 0);
-    font-size: 1.5em;
+    color: white;
+    font-size: 3vh;
 }
-.heading{
-    /* color: red; */
+.container{
+    display: flex;
+    justify-content: space-around;
+    gap: 5vw;
+    margin-right: 5vw;
 }
-@media screen and (max-width:1000px){
-    
+.container2 {
+    display: flex;
+    justify-content: space-around;
+    gap: 5vw;
+    margin-left: 5vw;
+}
+.video{
+    margin: 10vh 0 0 7vw;
+}
+.video2{
+    margin-right: 10vw;
+}
+
+@media screen and (max-width: 950px){
+    .mainDiv{
+        height: 1100px;
+        position: relative;
+        background: linear-gradient(-70deg, #a53e3a57 10%,rgba(19, 18, 18, 0.033) 90%),
+         url('https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
+    }
 }

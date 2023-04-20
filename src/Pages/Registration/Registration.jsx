@@ -27,7 +27,7 @@ function Registration() {
     } 
     
     
-    else if(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && /^[a-zA-Z]+$/.test(fname) && /^[a-zA-Z]+$/.test(lname) &&  /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(password) ) {
+    else if(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && /^[a-zA-Z]+$/.test(fname) && /^[a-zA-Z]+$/.test(lname) &&  /^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/.test(password) ) {
       const newData = [...local, { fname, lname, email, password }];
       setLocal(newData);
       localStorage.setItem("users", JSON.stringify(newData));
