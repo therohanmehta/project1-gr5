@@ -44,7 +44,7 @@ export default function Trainer() {
         <br />
 
         <div className={style.submit}>
-          <Link to={"/Team"} className="link-tag">
+          <Link to={"/team"} className="link-tag">
             {" "}
             <button className={style.btn}>Meet Our Team</button>{" "}
           </Link>

@@ -10,7 +10,7 @@ import TrainerSection from "./Pages/TrainerSection/TrainerSection";
 import Registration from "./Pages/Registration/Registration";
 import Home from './Pages/Home/Home';
 import Footer from './Pages/Footer/Footer';
-
+import Team from './Pages/Team/'
 
 function App() {
   return (
@@ -26,6 +26,8 @@ function App() {
       <Route path='/trainer' element={<TrainerSection/>}/>
       <Route path='/registration' element={<Registration/>}/>
       <Route path='/home' element={<Home/>}/>
+      <Route path='/team' element={<Team/>}/>
+
 
      </Routes>
     {/* <Footer/> */}
